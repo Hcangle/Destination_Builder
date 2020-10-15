@@ -75,7 +75,7 @@ Do not use scaffolding to build your project. Your goal here is to learn. Scaffo
    
    - Controller 
 
-     - Routes 
+     - App Routes 
       * get '/routes/:route_id/postures', to: 'postures#index'
       * get '/routes/:route_id/postures/new', to: 'postures#new'
       * get 'postures', to: 'postures#create'
