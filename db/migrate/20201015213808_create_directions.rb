@@ -5,6 +5,7 @@ class CreateDirections < ActiveRecord::Migration[6.0]
       t.integer :route_id 
       t.integer :duration 
       t.text :variation 
+      t.timestamps
     end
   end
 end

@@ -71,14 +71,14 @@ Do not use scaffolding to build your project. Your goal here is to learn. Scaffo
     - get '/routes/new', to: 'routes#new'
     - get '/routes/create', to: 'routes#create'
     
-  - Postures 
+  - Directions(Join table) 
    
    - Controller 
 
      - App Routes 
-      * get '/routes/:route_id/postures', to: 'postures#index'
-      * get '/routes/:route_id/postures/new', to: 'postures#new'
-      * get 'postures', to: 'postures#create'
+      * get '/routes/:route_id/directions', to: 'directions#index'
+      * get '/routes/:route_id/directions/new', to: 'directions#new'
+      * get 'directions', to: 'directions#create'
 
 
 * USERS
