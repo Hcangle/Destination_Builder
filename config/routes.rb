@@ -4,5 +4,5 @@ resources :destinations, only: :index
 resources :routes, only: [:index, :create, :new] do 
   resources :directions, only: [:index, :new]
 end 
-resources :directions, only: :create
+resources :directions, only: :create 
 end

@@ -6,12 +6,13 @@ class RoutesController < ApplicationController
 
     def new
         @route = Routes.new 
+        redirect_to routes_path
     end 
 
     def create 
-       @route = Route.new(route_params)
+       @route = Route.build(route_params)
        if @route.save
-         redirect_to new_route_direction_path(@route)
+         redirect_to route_direction_path(@route)
        else 
         render :new
        end 

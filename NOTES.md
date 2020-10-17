@@ -74,12 +74,18 @@ Do not use scaffolding to build your project. Your goal here is to learn. Scaffo
   - Directions(Join table) 
    
    - Controller 
+     * new 
+     * index 
+     * create
 
      - App Routes 
       * get '/routes/:route_id/directions', to: 'directions#index'
       * get '/routes/:route_id/directions/new', to: 'directions#new'
       * get 'directions', to: 'directions#create'
 
+     - Views 
+      * new => nested under routes 
+      * index => nested under routes 
 
 * USERS
 
