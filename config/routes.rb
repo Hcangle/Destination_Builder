@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 resources :destinations, only: :index
 resources :routes, only: [:index, :create, :new, :show, :edit] do 
   resources :directions, only: [:index, :new, :show, :edit]
+  
 end 
-
+root "destinations#index"
 end
