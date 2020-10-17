@@ -2,8 +2,8 @@
 
 <%= link_to "Add New Direction", new_route_direction_path(@route) %> 
 
-<% @route.directions.each do |direction| %>
+<% @route.direction.each.with_index(1) do |direction, index| %>
    <h3><%= index %>. <%= direction.destination.name  %></h3>
    <p><%= direction.duration %></p>
    <p><%= direction.variation %></p>
-    <% end %>
+<% end %>

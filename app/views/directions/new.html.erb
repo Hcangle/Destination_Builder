@@ -1,1 +1,3 @@
-New direction
+<h2> Add Directions to Your Route <i><%= @route.name%></i> </h2>
+
+<%= render partial: 'form', locals: {direction: @direction, route: @route, url: route_directions_path(@route, @direction)} %>

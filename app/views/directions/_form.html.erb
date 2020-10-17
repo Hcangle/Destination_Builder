@@ -1,0 +1,9 @@
+
+<%= form_for direction, url: url do |f| %>
+    <%= f.label :Duration %> 
+    <%= f.number_field  :duration %>
+    <%= f.label :Variation %>
+    <%= f.text_area :variation %>
+    <%= f.hidden_field :route_id, value: @route.id %>
+    <%= f.submit %>
+<% end %>
