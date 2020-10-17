@@ -90,3 +90,8 @@ Do not use scaffolding to build your project. Your goal here is to learn. Scaffo
 * USERS
 
 * OATH
+
+
+
+ <h3><%= link_to route.name, routes_direcitions_path(route) %></h3>
+ <%= format_duration_hours_and_minutes(routes.duration) %>

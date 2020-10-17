@@ -2,7 +2,7 @@
 
 
 
-<%= form_for routes_path do |f| %>
+<%= form_for @route do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.submit "Create Route and Add Directions" %>

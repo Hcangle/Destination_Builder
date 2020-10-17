@@ -1,18 +1,17 @@
 class RoutesController < ApplicationController
 
     def index 
-        @routes = Routes.all
+        @routes = Route.all
     end 
 
     def new
-        @route = Routes.new 
-        redirect_to routes_path
+        @route = Route.new   
     end 
 
     def create 
-       @route = Route.build(route_params)
+       @route = Route.new(route_params)
        if @route.save
-         redirect_to route_direction_path(@route)
+         redirect_to route_path(@route)
        else 
         render :new
        end 
