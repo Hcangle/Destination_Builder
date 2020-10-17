@@ -2,9 +2,8 @@
 
 <%= link_to "Create New Route", new_route_path %>
 
-<%= @routes.each do |route| %>
+<% @routes.each do |route| %>
    
- <h1><%= route.name %></h1>
- 
-    
+ <h1><%= route.name %></h1>  
+ <%= link_to "Add Directions", new_route_direction_path(route.id) %>
 <% end %> 
