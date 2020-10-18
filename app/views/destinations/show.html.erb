@@ -1,0 +1,9 @@
+<h1><%= @route.name %></h1>
+
+<% @destinations.each do |destination| %>
+    <p><%= destination.location %></p>
+    <p><%= destination.description %></p>
+    <p><%= destination.date_traveled %></p>
+    <p><%= destination.completed %></p>
+    <p><%= destination.user_id %></p>
+      <% end %>
