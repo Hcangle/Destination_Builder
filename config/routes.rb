@@ -6,4 +6,6 @@ resources :routes, only: [:index, :create, :new, :show, :edit] do
   
 end 
 root "destinations#index"
+
+get '/destinations/visited', to: 'destinations#visited' 
 end

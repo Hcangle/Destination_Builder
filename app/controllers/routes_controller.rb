@@ -18,6 +18,15 @@ class RoutesController < ApplicationController
        end 
     end 
 
+    def show 
+        @route = Route.find_by_id(params[:id])
+     render :show
+    end 
+
+    def destroy 
+    end 
+    
+
     private 
 
     def route_params

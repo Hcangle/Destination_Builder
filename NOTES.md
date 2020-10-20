@@ -96,3 +96,30 @@ Do not use scaffolding to build your project. Your goal here is to learn. Scaffo
 * Routes Index 
  <h3><%= link_to route.name, routes_direcitions_path(route) %></h3>
  <%= format_duration_hours_and_minutes(routes.duration) %>
+
+
+*show pages
+ <h1><%= @destination.name %> </h1>
+<h2><%= @route.name %> </h2>
+<h2><%= @direction.variation %> </h2>
+
+<a href="/direction/<%=@directions.id%>/edit">Edit Directions</a>
+ 
+ <br>
+ 
+<a href="/destinations">See all Destinations </a>
+
+
+<form action="/destinations/<%=@desination.id%>/delete" method="post">
+ <input id="hidden" type="hidden" name="_method" value="delete">
+ <button>Delete</button>
+
+ * Routes new.html
+
+   <%= form_for @route do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit "Create Route" %>
+
+
+<% end %>

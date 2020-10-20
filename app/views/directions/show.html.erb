@@ -1,0 +1,9 @@
+Pilahi
+
+<% @route.directions.each.with_index(1) do |direction, index| %>
+    <h3><%= index %>. <%= direction.destination.name  %></h3>
+    <p><%= direction.duration %></p>
+    <p><%= direction.variation %></p>
+ <% end %>
+
+

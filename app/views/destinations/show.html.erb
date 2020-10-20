@@ -1,5 +1,9 @@
 Destnation Home Page
-
+<h3> <%= @destination.location %> </h3>
+<% @destination.routes.each do |route| %>
+   <%= route.name %>
+<% end %>
+<br> 
 <%= link_to "Create New Route", new_route_path %>
 
 

@@ -17,8 +17,17 @@ class DirectionsController < ApplicationController
     if @direction.save 
      redirect_to route_direction_path(@direction.route[:id])
     else 
+        
         render :new
     end 
+end 
+
+def show 
+    @direction = Direction.find_by(params[:id])
+     render :show
+end 
+
+def destroy
 end 
 
 

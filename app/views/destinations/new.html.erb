@@ -1,5 +1,9 @@
 <h2> Add a New Destination </h2>
 
+<% @destination.errors.full_messages.each do |error| %>
+    <p> <i><%= error %></i> </p>
+      <% end %>
+
 <%= form_for @destination do |f| %>
     <%= f.label :location %>
     <%= f.text_field :location %>

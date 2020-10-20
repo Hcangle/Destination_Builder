@@ -17,6 +17,23 @@ class DestinationsController < ApplicationController
        end 
     end 
 
+    def show 
+     @destination = Destination.find_by_id(params[:id])
+     render :show
+    end 
+
+
+    def visited
+     @destinations = Destination.visited 
+     render :index
+    end 
+
+
+    def destroy 
+    end 
+
+
+
     private 
 
     def destination_params
