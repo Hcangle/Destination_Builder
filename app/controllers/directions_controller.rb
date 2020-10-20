@@ -15,12 +15,12 @@ class DirectionsController < ApplicationController
     @route = Route.find_by(id: params[:direction][:route_id])
     @direction = Direction.new(direction_params)
     if @direction.save 
-     redirect_to route_direction_path(@direction.route[:id])
-    else 
-        
-        render :new
+     redirect_to route_directions_path(@direction.route[:id])
+     else  
+      render :new
+     end 
     end 
-end 
+    
 
 def show 
     @direction = Direction.find_by(params[:id])

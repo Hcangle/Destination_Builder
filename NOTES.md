@@ -88,6 +88,25 @@ Do not use scaffolding to build your project. Your goal here is to learn. Scaffo
       * index => nested under routes 
 
 * USERS
+  -Authentication
+  *sessionscontroller for login/logout
+  *users controller for signup 
+
+  -views 
+  * sign up and log in forms 
+
+  -Routes 
+   get '/login', to: 'sessions#new'
+   post '/login', to 'sessions#create'
+   get '/logout', to: 'sesssions#destroy' 
+   get 'signup', to: 'users#new'
+   post '/signup', to: 'users#create'
+
+  -Relationships
+  * user has_many sequences
+  * user has_many directions through routes
+  * routes belongs_to user
+  * direction belongs_to user through routes  
 
 * OATH
 
