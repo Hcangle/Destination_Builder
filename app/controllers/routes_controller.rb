@@ -1,8 +1,8 @@
 class RoutesController < ApplicationController
+  
 
     def index 
-        @routes = Route.all
-        
+        @routes = current_user.routes
     end 
 
     def new
@@ -10,7 +10,7 @@ class RoutesController < ApplicationController
     end 
 
     def create 
-       @route = Route.new(route_params)
+       @route = current_user.routes.build(route_params)
        if @route.save
          redirect_to route_path(@route)
        else 

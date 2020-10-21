@@ -1,7 +1,8 @@
 class DestinationsController < ApplicationController
+    
 
     def index 
-        @destinations = Destination.all  
+        @destinations = current_user.destinations
     end 
 
     def new
@@ -10,6 +11,7 @@ class DestinationsController < ApplicationController
 
     def create 
        @destination = Destination.new(destination_params)
+       @destination.user_id = current_user.id 
        if @destination.save
          redirect_to destinations_path(@destination)
        else 
@@ -29,7 +31,22 @@ class DestinationsController < ApplicationController
     end 
 
 
-    def destroy 
+    def edit
+        if @destination.user.first != @current_user
+            flash[:alert] = "You are not authorized to view that page."
+            redirect_to destinations_path  
+        end
+    end
+
+    def update
+        @destination.update(destination_params)
+        redirect_to destination_route_path(@destination)
+    end 
+
+    def destroy
+        @destination.destroy
+        flash[:notice] = "Sucessfully Deleted Destination!"
+        redirect_to destinations_path
     end 
 
 
