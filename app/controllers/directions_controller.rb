@@ -7,8 +7,8 @@ class DirectionsController < ApplicationController
     end 
 
     def new 
-        redirect_if_request_invalid
-        @direction = Direction.new
+        @route = Route.find_by_id(params[:route_id])
+        @direction = @route.directions.build
     
     end 
 
@@ -16,6 +16,7 @@ class DirectionsController < ApplicationController
        @route = Route.find_by(id: params[:direction][:route_id])
         if user_authorized?
          @direction = Direction.new(direction_params)
+         
           if @direction.save 
            redirect_to route_directions_path(@direction.route[:id])
           else  
