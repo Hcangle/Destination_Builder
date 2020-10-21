@@ -7,5 +7,12 @@
 <%= form_for @destination do |f| %>
     <%= f.label :location %>
     <%= f.text_field :location %>
+    <br>
+    <label> Have you been here before? </label>
+    <select> 
+    <option>Yes</option>
+    <option>No</option>
+     </select>
+     <br>
     <%= f.submit "Create Destination" %>
 <% end %>

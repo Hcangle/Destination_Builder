@@ -5,5 +5,7 @@
     <%= f.label :Variation %>
     <%= f.text_area :variation %>
     <%= f.hidden_field :route_id, value: @route.id %>
+    <%= f.collection_select :id, Destination.all, :id, :location %>
     <%= f.submit %>
 <% end %>
+

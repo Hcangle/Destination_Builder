@@ -2,7 +2,12 @@ class DestinationsController < ApplicationController
     
 
     def index 
+        if logged_in?
         @destinations = current_user.destinations
+
+        else 
+            redirect_to login_path
+        end 
     end 
 
     def new
@@ -27,7 +32,7 @@ class DestinationsController < ApplicationController
 
     def visited
      @destinations = Destination.visited 
-     render :index
+     render :visited
     end 
 
 

@@ -5,14 +5,15 @@ resources :routes, only: [:index, :create, :new, :show, :edit] do
   resources :directions 
   
 end 
-root "destinations#index"
+root "destinations#index" 
 
-get '/destinations/visited', to: 'destinations#visited' 
+get '/visited', to: 'destinations#visited' 
 
 get '/login', to: 'sessions#new'
 post '/login', to: 'sessions#create'
 get '/logout', to: 'sessions#destroy' 
 get 'signup', to: 'users#new'
 post '/signup', to: 'users#create'
+
 
 end

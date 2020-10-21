@@ -15,19 +15,25 @@ class DirectionsController < ApplicationController
     def create 
        @route = Route.find_by(id: params[:direction][:route_id])
         if user_authorized?
+        
          @direction = Direction.new(direction_params)
+
+
+
+
+         @direction.destination_id = params[:direction][:id]
          
           if @direction.save 
-           redirect_to route_directions_path(@direction.route[:id])
+           redirect_to route_direction_path(@direction.route_id, @direction )
           else  
            render :new
           end 
         else 
-         redirect_to routes_path
+        # redirect_to routes_path
      end 
     end 
     
-
+    
 def show 
     @direction = Direction.find_by(params[:id])
      render :show
