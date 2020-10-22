@@ -17,6 +17,11 @@ class DestinationsController < ApplicationController
     def create 
        @destination = Destination.new(destination_params)
        @destination.user_id = current_user.id 
+       if params[:visited] == "yes"
+        @destination.visited = true
+       else 
+        @destination.visited = false 
+       end 
        if @destination.save
          redirect_to destinations_path(@destination)
        else 
@@ -37,10 +42,8 @@ class DestinationsController < ApplicationController
 
 
     def edit
-        if @destination.user.first != @current_user
-            flash[:alert] = "You are not authorized to view that page."
-            redirect_to destinations_path  
-        end
+        @destinations = Destination.find_by_id(params[:id])
+        redirect_to edit_destination_path
     end
 
     def update
@@ -49,10 +52,17 @@ class DestinationsController < ApplicationController
     end 
 
     def destroy
-        @destination.destroy
-        flash[:notice] = "Sucessfully Deleted Destination!"
-        redirect_to destinations_path
-    end 
+        if logged_in?
+            @destination = Destination.find_by_id(params[:id])
+            if @destination && @destination.user == current_user
+              @destination.delete
+            
+            redirect to destinations_path
+            end
+          else
+            redirect to login_path
+          end
+        end
 
 
 

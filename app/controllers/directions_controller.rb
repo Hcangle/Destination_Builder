@@ -17,10 +17,6 @@ class DirectionsController < ApplicationController
         if user_authorized?
         
          @direction = Direction.new(direction_params)
-
-
-
-
          @direction.destination_id = params[:direction][:id]
          
           if @direction.save 

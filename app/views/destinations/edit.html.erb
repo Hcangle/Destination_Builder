@@ -1,1 +1,18 @@
-<h2> Edit Destination: </h2>
+<h2> Edit <%= @destination.location %> </h2>
+
+<form method="POST" action='/supplies/<%=@supplies.id%>' >
+    <input id="hidden" type="hidden" name="_method" value="patch" />
+    <label>Location</label>
+    <input type="text" name="destination[location]" placeholder="<%= @destination.location %>">
+    <label>Route</label>
+    <input type="text" name="route[name]" value="<%= @route.name %>">
+    <label>Directions</label>
+    <input type="text" name="directions[variation]" value="<%= @direction.variation %>">
+    <button>Edit</button>
+</form>
+
+<br>
+
+<form action="/destination/<%=@destination.id%>/delete" method="post">
+ <input id="hidden" type="hidden" name="_method" value="delete">
+ <button>Delete</button>

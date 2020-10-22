@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_10_20_225300) do
     t.string "location"
     t.text "description"
     t.date "date_traveled"
-    t.boolean "completed", default: false
+    t.boolean "visited", default: false
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_10_20_225300) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.string "email"
   end
 
 end

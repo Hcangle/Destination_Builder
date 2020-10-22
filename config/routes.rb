@@ -8,6 +8,7 @@ end
 root "destinations#index" 
 
 get '/visited', to: 'destinations#visited' 
+get '/edit', to: 'destinations#edit'
 
 get '/login', to: 'sessions#new'
 post '/login', to: 'sessions#create'
@@ -15,5 +16,6 @@ get '/logout', to: 'sessions#destroy'
 get 'signup', to: 'users#new'
 post '/signup', to: 'users#create'
 
+get '/auth/:google_oauth2/callback' => 'sessions#google'
 
 end

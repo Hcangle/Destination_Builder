@@ -24,4 +24,22 @@ end
         redirect_to login_path
     end 
 
+    def google
+        @user = User.find_or_create_by(email: auth["info"]["email"]) do |user|
+          user.username= auth["info"]["first_name"]
+          user.password= SecureRandom.hex(8)
+        end
+        
+        if @user && @user.id
+          session[:user_id] = @user.id
+          redirect_to destinations_path
+        else
+        
+          redirect_to login_path
+        end
+      end  
+      
+      private    def auth
+        request.env['omniauth.auth']
+      end
 end 
