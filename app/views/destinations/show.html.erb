@@ -1,4 +1,3 @@
-Destination Home Page
 <h3> <%= @destination.location %> </h3>
 <% @destination.routes.each do |route| %>
    <%= route.name %>
@@ -8,3 +7,7 @@ Destination Home Page
 <br>
 
 <%= link_to "Delete Destination", destination_path(@destination), method: "delete" %>
+<br>
+<%= link_to "Destination Home Page", destinations_path %>
+<br>
+<%= link_to "Logout", logout_path %>
