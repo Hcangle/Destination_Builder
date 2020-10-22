@@ -7,6 +7,4 @@ Destination Home Page
 <%= link_to "Create New Route", new_route_path %>
 <br>
 
-<a href="/destination/<%=@destination.id%>/edit">Edit Destination</a>
-<br>
-<a href="/destination/<%=@destination.id%>/destroy">Delete Destination</a>  
+<%= link_to "Delete Destination", destination_path(@destination), method: "delete" %>

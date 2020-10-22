@@ -8,7 +8,7 @@ end
 root "destinations#index" 
 
 get '/visited', to: 'destinations#visited' 
-get '/edit', to: 'destinations#edit'
+
 
 get '/login', to: 'sessions#new'
 post '/login', to: 'sessions#create'

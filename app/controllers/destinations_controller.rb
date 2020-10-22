@@ -40,27 +40,16 @@ class DestinationsController < ApplicationController
      render :visited
     end 
 
-
-    def edit
-        @destinations = Destination.find_by_id(params[:id])
-        redirect_to edit_destination_path
-    end
-
-    def update
-        @destination.update(destination_params)
-        redirect_to destination_route_path(@destination)
-    end 
-
     def destroy
         if logged_in?
             @destination = Destination.find_by_id(params[:id])
             if @destination && @destination.user == current_user
               @destination.delete
             
-            redirect to destinations_path
+            redirect_to destinations_path
             end
           else
-            redirect to login_path
+            redirect_to login_path
           end
         end
 
