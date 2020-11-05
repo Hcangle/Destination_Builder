@@ -18,4 +18,7 @@ post '/signup', to: 'users#create'
 
 get '/auth/:google_oauth2/callback' => 'sessions#google'
 
+get '/users/:user_id/routes', to: 'routes#index'
 end
+
+#route nested under users url users/1/routes url displays all routes for user 1

@@ -2,7 +2,13 @@ class RoutesController < ApplicationController
   
 
     def index 
-        @routes = current_user.routes
+        #params give info from(view) form or url
+        if params[:user_id]
+          @user = User.find_by_id(params[:user_id])
+          @routes = @user.routes
+        else 
+            @routes = Route.all
+        end 
     end 
 
     def new

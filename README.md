@@ -1,24 +1,15 @@
-# README
+#Rails Project 
+  
+  This project lets you create your roadtrip routes for your desired destinations! 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Installation 
 
-Things you may want to cover:
+    Clone this repository to your local machine.
 
-* Ruby version
+    In a terminal, navigate into the directory "destination-builder".
 
-* System dependencies
+    In the terminal, run bundle install to install all dependencies.
 
-* Configuration
+    In the terminal, run rails s to start the server.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    Navigate to the local host in your browser of choice, and enjoy!
